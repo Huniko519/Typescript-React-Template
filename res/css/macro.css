@@ -1,0 +1,116 @@
+.f0{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.w10em{
+    width: 10em;
+}
+
+.burger {
+	cursor: pointer;
+	padding: 12px 0;
+}
+
+.burger span {
+	position: relative;
+	display: block;
+	width: 20px;
+	height: 4px;
+	background: #CCF;
+	transition: all .2s ease-in-out;
+}
+
+.burger span:before, .burger span:after {
+	position: absolute;
+	background: #CCF;
+	content: '';
+	width: 20px;
+	height: 4px;
+	transition: all .2s ease-in-out;
+}
+
+.burger span:before {
+	top: -8px;
+}
+
+.burger span:after {
+	top: 8px;
+}
+
+.burger.active span {
+	background: transparent;
+}
+
+.burger.active span:before {
+	transform: rotate(45deg) translate(5px, 6px);
+}
+
+.burger.active span:after {
+	transform: rotate(-45deg) translate(5px, -6px);
+}
+
+.side_menu {
+    position: absolute;
+    transform: translate(-100%, 0);
+    transition: all 0.3s;
+    height: 100vh;
+}
+
+.checkbox input:checked ~ label:before {
+	content: '\f14a';
+}
+
+.checkbox label:before{
+	content: '\f0c8';
+}
+
+.checkbox input[type=checkbox] {
+	display: none;
+}
+
+.ho1:hover{
+	opacity: 0.7;
+}
+
+.progress-line, .progress-line:before {
+	height: 3px;
+	width: 100%;
+	margin: 0;
+}
+.progress-line {
+	background-color: #444;
+	display: -webkit-flex;
+	display: flex;
+}
+.progress-line:before {
+	background-color: #777;
+	content: '';
+	-webkit-animation: running-progress 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+	animation: running-progress 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+@-webkit-keyframes running-progress {
+	0% { margin-left: 0px; margin-right: 100%; }
+	50% { margin-left: 25%; margin-right: 0%; }
+	100% { margin-left: 100%; margin-right: 0; }
+}
+@keyframes running-progress {
+	0% { margin-left: 0px; margin-right: 100%; }
+	50% { margin-left: 25%; margin-right: 0%; }
+	100% { margin-left: 100%; margin-right: 0; }
+}
+
+[data-tooltip]:before {            
+	position : absolute;
+	transform: translate(20px, 20px);
+	content : attr(data-tooltip);
+	width: 300px;
+	opacity : 0;
+	background: #444;
+	border: 1px solid #777;
+}
+
+[data-tooltip]:hover:before {        
+    opacity : 1;
+}

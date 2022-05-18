@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    
+    <title>Login</title>
+    
+    <link rel="stylesheet" type="text/css" href="/css/reset.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya+SC&display=swap">	
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css" integrity="sha256-PF6MatZtiJ8/c9O9HQ8uSUXr++R9KBYu4gbNG5511WE=" crossorigin="anonymous" />	
+    <link rel="stylesheet" type="text/css" href="/css/arch.css">
+    <link rel="stylesheet" type="text/css" href="/css/ddark.css" id="specific_style">
+    <link rel="stylesheet" type="text/css" href="/css/macro.css">
+    
+</head>
+<body class="b1 c1 row jc fnt3" style="padding: 5%;">
+    <div class="col jc" style="width: 30%;">
+        <p class="p10 fsz15">Login:</p>
+
+        <div class="col jc p10" id="login_info">
+            <input type="text" class="p10 m5" placeholder="Username" id="username"/>
+            <input type="password" class="p10 m5" placeholder="Password" id="password"/>
+
+            <div class="p10"></div>
+
+            <div class="p10" id="error_message"></div>
+
+            <button onclick="Login()" class="p10 b3">Login</button>
+        </div>
+
+    </div>
+</body>
+
+<script>
+    async function Login(){
+        let user = document.getElementById('username');
+        let pass = document.getElementById('password');
+
+        let req = {
+            user: user.value,
+            pass: pass.value,
+            use_cookie: true
+        };
+
+        let res = await fetch('/api/public/posts/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(req)
+        });
+
+        console.log(res);
+
+        if(res.status == 200){
+            location.href = '/'
+        }
+        else{
+            document.getElementById('error_message').innerHTML = await res.text();
+        }
+    }
+</script>
+
+</html>

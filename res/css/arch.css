@@ -1,0 +1,110 @@
+/* Defaults */
+button{ border: none; }
+
+/* Z indexes */
+
+.z1{ z-index: 1; }
+.z10{ z-index: 10; }
+.z100{ z-index: 100; }
+.z1000{ z-index: 1000; }
+
+/* Element types */
+
+.layer{
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	left: 0;
+	top: 0;
+	overflow-y: auto;
+}
+
+.row{ display: flex; flex-direction: row; }
+.col{ display: flex; flex-direction: column; }
+.code{ font-family: 'Noto Sans Mono'; white-space:  pre; }
+
+/* Paddings margins etc. */
+
+.lp1{ padding: 5vw; }
+.p10{ padding: 10px; }
+.p10c > *{ padding: 10px; }
+.pt10{ padding-top: 10px; }
+.pl10{ padding-left: 10px; }
+.pr10{ padding-right: 10px; }
+.pb10{ padding-bottom: 10px; }
+
+.m5{ margin: 5px; }
+.m5c > *{ margin: 5px; }
+.m5l{ margin-left: 5px; }
+.m5t{ margin-top: 5px; }
+.m5b{ margin-bottom: 5px; }
+
+.mav{ margin: auto 0px; }
+.mah{ margin: auto 0px; }
+
+/* Alignings */
+
+.ac{ align-self: center; }
+.tac{ text-align: center; }
+.tar{ text-align: right; }
+.js{ justify-content: flex-start;}
+.jc{ justify-content: center; }
+.je{ justify-content: flex-end; }
+
+/* Flex tools */
+
+.fg{ flex-grow: 1; }
+.fgc > * { flex-grow: 1; }
+.fs{ flex-shrink: 1; }
+.fsc > * { flex-shrink: 1; }
+.fs0{ flex-shrink: 0; }
+.fwrap{ flex-wrap: wrap; }
+
+/* Font Sizes */
+
+.fsz09{ font-size: 0.9rem; }
+.fsz1{ font-size: 1rem; }
+.fsz11{ font-size: 1.1rem; }
+.fsz125{ font-size: 1.25rem; }
+.fsz15{ font-size: 1.5rem; }
+.fsz175{ font-size: 1.75rem; }
+.fsz2{ font-size: 2rem; }
+
+/* Sizes */
+.wsz1{ width: 1rem; }
+.wsz2{ width: 2rem; }
+.wsz3{ width: 3rem; }
+.wsz4{ width: 4rem; }
+
+.hsz1{ height: 1rem; }
+.hsz2{ height: 2rem; }
+.hsz3{ height: 3rem; }
+.hsz4{ height: 4rem; }
+
+.w75vw{ width: 75vw; }
+.w66vw{ width: 66vw; }
+.w50vw{ width: 50vw; }
+.w33vw{ width: 33vw; }
+.w25vw{ width: 25vw; }
+.w12vw{ width: 12.5vw; }
+
+.mw75vw{ min-width: 75vw; }
+.mw66vw{ min-width: 66vw; }
+.mw50vw{ min-width: 50vw; }
+.mw33vw{ min-width: 33vw; }
+.mw25vw{ min-width: 25vw; }
+.mw12vw{ min-width: 12.5vw; }
+
+/* Positions */
+.rel{ position: relative; }
+.abs{ position: absolute; }
+
+/* Cursors */
+.point{ cursor: pointer; }
+
+.nodisplay{display: none;}
+
+.overflow{ overflow: auto; }
+
+.noaction{ pointer-events: none; }
+.allaction{ pointer-events: all; }

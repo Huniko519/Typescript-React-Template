@@ -1,0 +1,23 @@
+# Do not change version. This is the version of aws buildspec, not the version of your buldspec file.
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 14
+  pre_build:
+    commands:
+      - echo Install packages
+      - aws --version
+      - yarn install --lock-file
+  build:
+    commands:
+      - echo Build started on `date`
+      - yarn build
+      - echo Build completed on `date`
+  post_build:
+    commands:
+      - echo Upload assets to S3 bucket
+      - cd build
+      - aws s3 sync . s3://${S3_BUCKET_NAME} --delete
+      - aws cloudfront create-invalidation --distribution-id ${CLOUDFRONT_DISTRIBUTION_ID} --paths "/*"

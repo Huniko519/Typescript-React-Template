@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500');
+
+body {
+  overflow-x: hidden;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
+
+/* Toggle Styles */
+
+#viewport {
+  padding-left: 250px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#content {
+  width: 100%;
+  position: relative;
+  margin-right: 0;
+}
+
+/* Sidebar Styles */
+
+#sidebar {
+  z-index: 1000;
+  position: fixed;
+  left: 250px;
+  width: 250px;
+  height: 100%;
+  margin-left: -250px;
+  overflow-y: auto;
+  background: #37474F;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#sidebar header {
+  background-color: #263238;
+  font-size: 20px;
+  line-height: 52px;
+  text-align: center;
+}
+
+#sidebar header a {
+  color: #fff;
+  display: block;
+  text-decoration: none;
+}
+
+#sidebar header a:hover {
+  color: #fff;
+}
+
+#sidebar .nav a{
+  background: none;
+  border-bottom: 1px solid #455A64;
+  color: #CFD8DC;
+  font-size: 20px ;
+  padding: 14px 25px;
+}
+
+li{
+    width: auto;
+    height: 50px;
+    padding-top: 10px;
+}
+
+.active{
+    background-color: #666;
+    color: rgb(165, 159, 159) !important;
+}
+
+#sidebar .nav a:hover{
+    text-decoration: none;
+    background: none ;
+    color: #ECEFF1;
+}
+
+#sidebar .nav a i{
+  margin-right: 16px;
+}
+
+.notification-error{
+  padding: 10px;
+  margin: 5px;
+  display: none;
+  min-width: 25vw;
+  background-color: #444;
+  color: #ff3c3c;
+}
+
+.notification-success{
+  padding: 10px;
+  margin: 5px;
+  display: none;
+  min-width: 25vw;
+  background-color: #444;
+  color: #082;
+}
+
+.notification-container{
+  display: flex; 
+  flex-direction: row;
+  justify-content: center;
+  /* padding: 5vw; */
+}
+
+.notification{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow-y: auto;
+    z-index: 10;
+    display: flex;
+   flex-direction: column;
+   pointer-events: none;
+}

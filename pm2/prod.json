@@ -1,0 +1,18 @@
+{
+  "apps": [
+    {
+      "name": "metaverse-tool",
+      "script": "dist/main.js",
+      "exec_mode": "fork",
+      "instances": 1,
+      "max_memory_restart": "2G",
+      "out_file": "/dev/null",
+      "error_file": "/dev/null",
+      "merge_logs": true,
+      "log_date_format": "YYYY-MM-DD HH:mm:ss Z",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    }
+  ]
+}
